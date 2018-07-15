@@ -1,0 +1,23 @@
+{
+  "jupyter.lab.setting-icon-class": "jp-EditIcon",
+  "jupyter.lab.setting-icon-label": "Jupyterlab Black",
+  "title": "Jupyterlab Black",
+  "description": "Jupyterlab Black settings.",
+  "definitions": {
+    "lineLength": {"type": "number"},
+    "blackPythonBin": {"type": "string"}
+  },
+  "properties": {
+    "lineLength": {
+      "title": "Black line_length arg to pass.",
+      "$ref": "#/definitions/lineLength",
+      "default": 110
+    },
+    "blackPythonBin": {
+      "title": "Path to Python interpreter to run Black.",
+      "$ref": "#/definitions/blackPythonBin"
+    }
+  },
+  "additionalProperties": false,
+  "type": "object"
+}

@@ -1,17 +1,27 @@
 # jupyterlab_black
 
-A JupyterLab extension to apply Black formatter to code within codecell.
+A JupyterLab extension to apply [Black](https://github.com/ambv/black) formatter to code within codecell.
 
+> Note: This extension will only work if you can load the terminal in jupyterlab. The terminal does [not currently work on Windows 7](https://github.com/jupyterlab/jupyterlab/issues/3647)
 
 ## Prerequisites
 
 * JupyterLab
+* A Python 3.6+ anywhere on your system with `black` installed
 
 ## Installation
 
 ```bash
 jupyter labextension install jupyterlab_black
 ```
+
+### Usage
+
+Head over to settings editor, and key in the python interpreter path of that Python3.6 you have with black installed.
+
+There is literally one option in the command palette right now:
+
+* `Apply Black Formatter`
 
 ## Development
 
@@ -20,13 +30,12 @@ For a development install (requires npm version 4 or later), do the following in
 ```bash
 npm install
 npm run build
-jupyter labextension link .
+jupyter labextension install . --no-build
 ```
 
-To rebuild the package and the JupyterLab app:
+Get npm and jupyter to watch for changes:
 
 ```bash
-npm run build
-jupyter lab build
+npm run waych  # in terminal 1
+jupyter lab build  # in terminal 2
 ```
-
