@@ -4,6 +4,10 @@ A JupyterLab extension to apply [Black](https://github.com/ambv/black) formatter
 
 > Note: This extension will only work if you can load the terminal in jupyterlab. The terminal does [not currently work on Windows 7](https://github.com/jupyterlab/jupyterlab/issues/3647)
 
+Here is a little demo.
+
+![](jupyterlab_black_demo.gif)
+
 ## Prerequisites
 
 * JupyterLab
