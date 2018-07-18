@@ -12,7 +12,7 @@ A JupyterLab extension to apply [Black](https://github.com/ambv/black) formatter
 ## Installation
 
 ```bash
-jupyter labextension install jupyterlab_black
+jupyter labextension install @ryantam626/jupyterlab_black
 ```
 
 ### Usage
