@@ -1,6 +1,6 @@
 {
   "name": "@ryantam626/jupyterlab_black",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A JupyterLab extension to apply Black formatter to code within codecell.",
   "keywords": [
     "jupyter",
@@ -11,7 +11,7 @@
   "bugs": {
     "url": "https://github.com/ryantam626/jupyterlab_black/issues"
   },
-  "license": "BSD-3-Clause",
+  "license": "MIT",
   "author": "Ryan Tam",
   "files": [
     "lib/**/*.{d.ts,eot,gif,html,jpg,js,js.map,json,png,svg,woff2,ttf}",
