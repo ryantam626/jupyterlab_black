@@ -40,6 +40,6 @@ jupyter labextension install . --no-build
 Get npm and jupyter to watch for changes:
 
 ```bash
-npm run waych  # in terminal 1
+npm run watch  # in terminal 1
 jupyter lab build  # in terminal 2
 ```
