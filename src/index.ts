@@ -57,7 +57,7 @@ class JupyterLabBlackFormatter {
 
     setupSettings(){
         let self = this;
-        Promise.all([this._settingRegistry.load('jupyterlab_black:settings')]).then(
+        Promise.all([this._settingRegistry.load('@ryantam626/jupyterlab_black:settings')]).then(
             ([settings]) => {
                 function onSettingsUpdated(settings: ISettingRegistry.ISettings){
                     self._lineLength = settings.get('lineLength').composite as number;
