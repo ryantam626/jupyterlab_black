@@ -4,7 +4,7 @@ A JupyterLab extension to apply [Black](https://github.com/ambv/black) formatter
 
 > Note: This extension will only work if you can load the terminal in jupyterlab. The terminal does [not currently work on Windows 7](https://github.com/jupyterlab/jupyterlab/issues/3647)
 
-Here is a little demo.
+Here is a little demo. Apologies for the horrid quality, I promise to find a better converter... And also to folks trying to view this in npm and seeing just a blank space :(
 
 ![](jupyterlab_black_demo.gif)
 
@@ -21,7 +21,7 @@ jupyter labextension install @ryantam626/jupyterlab_black
 
 ### Usage
 
-Head over to settings editor, and key in the python interpreter path of that Python3.6 you have with black installed.
+Head over to settings editor, and key in the python interpreter path of that Python3.6+ you have with black installed.
 
 There is literally one option in the command palette right now:
 
