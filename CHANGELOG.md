@@ -3,6 +3,7 @@ UNRELEASED
 
 * Update README to apologise for bad GIF quality;
 * Fix typo in README;
+* Stop polluting users shell history as much;
 
 0.1.2 2018-07-19
 -----------------

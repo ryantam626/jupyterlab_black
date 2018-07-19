@@ -83,6 +83,9 @@ class JupyterLabBlackFormatter {
 
         try {
             this._term.session = await this._app.serviceManager.terminals.startNew();
+            // NOTE: unset HISTFILE so user's shell history is no longer as polluted
+            //       when we dump codecell content though terminal.
+            this._term.session.send({type: 'stdin', content: ['unset HISTFILE\r']})
             this._loaded = true;
             console.log('Terminal session started.', this._term.session.name);
         } catch(e) {
