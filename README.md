@@ -62,6 +62,14 @@ There is literally one option in the command palette right now:
 
 * `Apply Black Formatter`
 
+## What are all these terminals spawning in my JupyterLab!?
+
+Since this plugin uses JupyterLab's terminal functionaility to facilitate support of non-Python3.6+ kernels, and the lack of ability to name JupyterLab terminals, every time the plugin is loaded, it would spawn a new terminal and use that. So if you are refreshing your JupyterLab tab constantly in your browser, this would spawn many many terminals sadly. Also, beware of which terminal you close, as the plugin will stop functioning when the terminal it's using is closed.
+
+## What is this `unset HISTFILE` business??
+
+As above, since JupyterLab's terminal is used, `unset HISTFILE` effectively prevent `jupyterlab_black` to further pollutes the user's shell history.
+
 ## Development
 
 For a development install (requires npm version 4 or later), do the following in the repository directory:
