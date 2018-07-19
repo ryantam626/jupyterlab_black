@@ -15,13 +15,48 @@ Here is a little demo. Apologies for the horrid quality, I promise to find a bet
 
 ## Installation
 
+From your existing environment with jupyterlab installed do the following:
+
 ```bash
 jupyter labextension install @ryantam626/jupyterlab_black
 ```
 
+### Python3.6+ Kernel Notes
+
+Install black with something like:
+
+```base
+conda install -c conda-forge black
+```
+
+OR
+
+```base
+pip install black
+```
+
+Find out path of your Python by `which python` and that would be what to put for `blackPythonBin` in the Usage section.
+
+### Non-Python3.6+ Kernel Notes
+
+If you are using kernel that are not Python3.6+, create another environment with Python3.6+ and black installed, for example (with conda, my perferred environment manager):
+
+```bash
+conda create --name py36_for_jupyterlab_black -c conda-forge python=3.6 black
+```
+
+Then find out where this lives by:
+
+```bash
+source activate py36_for_jupyterlab_black
+which python
+```
+
+It should be something like `/home/ryan/lib/anaconda2/envs/py36_for_jupyterlab_black/bin/python`, depending on your distribution of conda, that would be what to put for `blackPythonBin` in the Usage section.
+
 ### Usage
 
-Head over to settings editor, and key in the python interpreter path of that Python3.6+ you have with black installed.
+Head over to settings editor, and key in the python interpreter path of that Python3.6+ you have with black installed for `blackPythonBin`.
 
 There is literally one option in the command palette right now:
 
