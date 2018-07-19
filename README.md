@@ -41,5 +41,5 @@ Get npm and jupyter to watch for changes:
 
 ```bash
 npm run watch  # in terminal 1
-jupyter lab build  # in terminal 2
+jupyter lab --watch  # in terminal 2
 ```
