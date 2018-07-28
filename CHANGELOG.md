@@ -1,6 +1,8 @@
 UNRELEASED
 ----------
 
+* Bump dependencies ranges;
+
 
 0.1.3 2018-07-19
 ----------------
