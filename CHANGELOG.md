@@ -1,6 +1,10 @@
 UNRELEASED
 ----------
 
+
+0.1.4 2018-07-28
+----------------
+
 * Bump dependencies ranges;
 * Add note about keyboard shortcut;
 * Add badges to README;
