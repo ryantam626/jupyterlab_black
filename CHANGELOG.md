@@ -3,6 +3,7 @@ UNRELEASED
 
 * Bump dependencies ranges;
 * Add note about keyboard shortcut;
+* Add badges to README;
 
 
 0.1.3 2018-07-19

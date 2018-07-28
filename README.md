@@ -1,5 +1,8 @@
 # jupyterlab_black
 
+[![npm version](https://badge.fury.io/js/%40ryantam626%2Fjupyterlab_black.svg)](https://badge.fury.io/js/%40ryantam626%2Fjupyterlab_black)
+[![npm downloads](https://img.shields.io/npm/dw/%40ryantam626%2Fjupyterlab_black.svg)](https://badge.fury.io/js/%40ryantam626%2Fjupyterlab_black)
+
 A JupyterLab extension to apply [Black](https://github.com/ambv/black) formatter to code within codecell.
 
 > Note: This extension will only work if you can load the terminal in jupyterlab. The terminal does [not currently work on Windows 7](https://github.com/jupyterlab/jupyterlab/issues/3647)
