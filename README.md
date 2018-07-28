@@ -7,9 +7,9 @@ A JupyterLab extension to apply [Black](https://github.com/ambv/black) formatter
 
 > Note: This extension will only work if you can load the terminal in jupyterlab. The terminal does [not currently work on Windows 7](https://github.com/jupyterlab/jupyterlab/issues/3647)
 
-Here is a little demo. Apologies for the horrid quality, I promise to find a better converter... And also to folks trying to view this in npm and seeing just a blank space :(
+Here is a little demo. Apologies for the horrid quality, I promise to find a better converter...
 
-![](jupyterlab_black_demo.gif)
+![](https://raw.githubusercontent.com/ryantam626/jupyterlab_black/master/jupyterlab_black_demo.gif)
 
 ## Prerequisites
 

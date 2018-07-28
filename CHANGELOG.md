@@ -5,6 +5,7 @@ UNRELEASED
 * Add note about keyboard shortcut;
 * Add badges to README;
 * Apply recommended tslint rules;
+* Hardcode the GIF link so it can be seen in npmjs;
 
 0.1.3 2018-07-19
 ----------------
