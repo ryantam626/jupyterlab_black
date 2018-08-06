@@ -149,7 +149,7 @@ with open('/tmp/jupyterlab_black_working.py', 'r') as file_:
     unformatted = file_.read()
 formatted = format_str(unformatted, line_length=${this.lineLength})
 with open('/tmp/jupyterlab_black_working.py', 'w') as file_:
-    file_.write("${STDOUT_MARKER}${codeCellIdent}" + formatted)
+    file_.write("${STDOUT_MARKER}" + "${codeCellIdent}" + formatted)
 ${EOL}\r`,
             ],
             type: "stdin",

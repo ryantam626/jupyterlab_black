@@ -1,6 +1,7 @@
 UNRELEASED
 ----------
 
+* Fix race condition;
 
 0.1.4 2018-07-28
 ----------------
