@@ -95,6 +95,8 @@ As above, since JupyterLab's terminal is used, `unset HISTFILE` effectively prev
 For a development install (requires npm version 4 or later), do the following in the repository directory:
 
 ```bash
+pip install -e .
+jupyter serverextension enable --py jupyterlab_black
 npm install
 npm run build
 jupyter labextension install . --no-build
@@ -106,3 +108,5 @@ Get npm and jupyter to watch for changes:
 npm run watch  # in terminal 1
 jupyter lab --watch  # in terminal 2
 ```
+
+Making changes in the Python part of the plugin will require a rerun of `jupyter lab --watch` sadly.

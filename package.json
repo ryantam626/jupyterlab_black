@@ -33,8 +33,7 @@
   "dependencies": {
     "@jupyterlab/application": ">=0.16.0 <0.18.0",
     "@jupyterlab/apputils": ">=0.16.0 <0.18.0",
-    "@jupyterlab/notebook": ">=0.16.0 <0.18.0",
-    "@jupyterlab/terminal": ">=0.16.0 <0.18.0"
+    "@jupyterlab/notebook": ">=0.16.0 <0.18.0"
   },
   "devDependencies": {
     "rimraf": "^2.6.1",
