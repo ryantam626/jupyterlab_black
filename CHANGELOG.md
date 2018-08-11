@@ -1,6 +1,9 @@
 UNRELEASED
 ----------
 
+0.2.0 2018-08-11
+----------------
+
 * Implement notebook server extension to replace hacky terminal interaction;
 
 0.1.5 2018-08-06
