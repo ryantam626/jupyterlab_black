@@ -5,8 +5,6 @@
 
 A JupyterLab extension to apply [Black](https://github.com/ambv/black) formatter to code within codecell.
 
-> Note: This extension will only work if you can load the terminal in jupyterlab. The terminal does [not currently work on Windows 7](https://github.com/jupyterlab/jupyterlab/issues/3647)
-
 Here is a little demo. Apologies for the horrid quality, I promise to find a better converter...
 
 ![](https://raw.githubusercontent.com/ryantam626/jupyterlab_black/master/jupyterlab_black_demo.gif)
@@ -42,23 +40,6 @@ pip install black
 
 Find out path of your Python by `which python` and that would be what to put for `blackPythonBin` in the Usage section.
 
-### How about a keyboard shortcut?
-
-Add an extra extry to your keyboard shortcuts settings with something like
-
-```
-{"jupyterlab_black:format":{
-    "command": "jupyterlab_black:format",
-    "keys": [
-        "Ctrl K",
-        "Ctrl L"
-    ],
-    "selector": ".jp-Notebook.jp-mod-editMode"
-}}
-```
-
-This basically says "Under edit mode (detected through the selector), using the chord Ctrl K + Ctrl L, invoke the `jupyterlab_black:format` command". And there you have it :tada:
-
 ### Non-Python3.6+ Kernel Notes
 
 If you are using kernel that are not Python3.6+, create another environment with Python3.6+ and black installed, for example (with conda, my perferred environment manager):
@@ -84,13 +65,22 @@ There is literally one option in the command palette right now:
 
 * `Apply Black Formatter`
 
-## What are all these terminals spawning in my JupyterLab!?
+### How about a keyboard shortcut?
 
-Since this plugin uses JupyterLab's terminal functionaility to facilitate support of non-Python3.6+ kernels, and the lack of ability to name JupyterLab terminals, every time the plugin is loaded, it would spawn a new terminal and use that. So if you are refreshing your JupyterLab tab constantly in your browser, this would spawn many many terminals sadly. Also, beware of which terminal you close, as the plugin will stop functioning when the terminal it's using is closed.
+Add an extra extry to your keyboard shortcuts settings with something like
 
-## What is this `unset HISTFILE` business??
+```
+{"jupyterlab_black:format":{
+    "command": "jupyterlab_black:format",
+    "keys": [
+        "Ctrl K",
+        "Ctrl L"
+    ],
+    "selector": ".jp-Notebook.jp-mod-editMode"
+}}
+```
 
-As above, since JupyterLab's terminal is used, `unset HISTFILE` effectively prevent `jupyterlab_black` to further pollutes the user's shell history.
+This basically says "Under edit mode (detected through the selector), using the chord Ctrl K + Ctrl L, invoke the `jupyterlab_black:format` command". And there you have it :tada:
 
 ## Development
 
