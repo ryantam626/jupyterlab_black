@@ -5,8 +5,6 @@
 
 A JupyterLab extension to apply [Black](https://github.com/ambv/black) formatter to code within codecell.
 
-> Note: This extension will only work if you can load the terminal in jupyterlab. The terminal does [not currently work on Windows 7](https://github.com/jupyterlab/jupyterlab/issues/3647)
-
 Here is a little demo. Apologies for the horrid quality, I promise to find a better converter...
 
 ![](https://raw.githubusercontent.com/ryantam626/jupyterlab_black/master/jupyterlab_black_demo.gif)
