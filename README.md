@@ -22,6 +22,7 @@ From your existing environment with jupyterlab installed do the following:
 
 ```bash
 jupyter labextension install @ryantam626/jupyterlab_black
+jupyter serverextension enable --py jupyterlab_black
 ```
 
 ### Python3.6+ Kernel Notes
