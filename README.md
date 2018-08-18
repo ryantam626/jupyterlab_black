@@ -1,3 +1,9 @@
+# NOTE
+
+If you are using Python3.6+, feel free to use [my other less hacky plugin](https://github.com/ryantam626/jupyterlab_code_formatter) - it supports YAPF and autopep8 as well.
+
+However if you are using Python2 or Python(<3.5), keep going.
+
 # jupyterlab_black
 
 [![npm version](https://badge.fury.io/js/%40ryantam626%2Fjupyterlab_black.svg)](https://badge.fury.io/js/%40ryantam626%2Fjupyterlab_black)
