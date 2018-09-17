@@ -1,5 +1,6 @@
 import json
 import subprocess
+import tempfile
 
 from notebook.utils import url_path_join
 from notebook.base.handlers import APIHandler
@@ -26,35 +27,39 @@ class JupyterlabBlackAPIHandler(APIHandler):
             out = "Error in subprocess!! {}".format(err)
         return code, out
 
-
     def post(self):
         data = json.loads(self.request.body.decode("utf-8"))
         python = data["python"]
         line_length = data["lineLength"]
         unformatted = data["code"]
 
-        with open("/tmp/jupyrerlab_black_worker.py", "w") as file_:
-            file_.write(
+        worker_temp_file = tempfile.NamedTemporaryFile()
+        format_temp_file = tempfile.NamedTemporaryFile()
+
+        worker_temp_file.file.write(
                 """
 from black import format_str
-with open('/tmp/jupyterlab_black_working.py', 'r') as file_:
+with open('{format_temp}', 'r') as file_:
     unformatted = file_.read()
 formatted = format_str(unformatted, line_length={line_length})
-with open('/tmp/jupyterlab_black_working.py', 'w') as file_:
+with open('{format_temp}', 'w') as file_:
     file_.write(formatted)
-                """.format(line_length=line_length)
+                """.format(line_length=line_length, format_temp=format_temp_file.name).encode()
             )
+        worker_temp_file.file.flush()
 
-        with open("/tmp/jupyterlab_black_working.py", "w") as file_:
-            file_.write(unformatted)
+        format_temp_file.file.write(unformatted.encode())
+        format_temp_file.file.flush()
 
-        retcode = subprocess.call([python, "/tmp/jupyrerlab_black_worker.py"])
-
+        retcode = subprocess.call([python, worker_temp_file.name])
         if retcode != 0:
             self.set_status(500, "Blew up in subprocess..")
             self.finish()
 
-        with open("/tmp/jupyterlab_black_working.py", "r") as file_:
-            formatted = file_.read()
+        format_temp_file.file.seek(0)
+        formatted = format_temp_file.file.read().decode()
+
+        worker_temp_file.close()
+        format_temp_file.close()
 
         self.finish(json.dumps(formatted))
