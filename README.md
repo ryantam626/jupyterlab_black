@@ -76,14 +76,16 @@ There is literally one option in the command palette right now:
 Add an extra extry to your keyboard shortcuts settings with something like
 
 ```
-{"jupyterlab_black:format":{
-    "command": "jupyterlab_black:format",
-    "keys": [
-        "Ctrl K",
-        "Ctrl L"
-    ],
-    "selector": ".jp-Notebook.jp-mod-editMode"
-}}
+{
+    "jupyterlab_code_formatter:black": {
+        "command": "jupyterlab_code_formatter:black",
+        "keys": [
+            "Ctrl K",
+            "Ctrl L"
+        ],
+        "selector": ".jp-Notebook.jp-mod-editMode"
+    }
+}
 ```
 
 This basically says "Under edit mode (detected through the selector), using the chord Ctrl K + Ctrl L, invoke the `jupyterlab_black:format` command". And there you have it :tada:
