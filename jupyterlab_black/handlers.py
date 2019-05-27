@@ -27,6 +27,20 @@ class JupyterlabBlackAPIHandler(APIHandler):
             out = "Error in subprocess!! {}".format(err)
         return code, out
 
+    @staticmethod
+    def code_to_format(format_temp_file_name, line_length):
+        return """
+import black
+with open('{format_temp_file_name}', 'r') as file_:
+    unformatted = file_.read()
+if black.__version__ >= '19.3b0':
+    code = black.format_str(code, mode=black.FileMode(line_length={line_length}))[:-1]
+else:
+    code = black.format_str(code, line_length={line_length})[:-1]
+with open('{format_temp_file_name}', 'w') as file_:
+    file_.write(formatted)
+        """.format(format_temp_file_name=format_temp_file_name, line_length=line_length).encode()
+
     def post(self):
         data = json.loads(self.request.body.decode("utf-8"))
         python = data["python"]
@@ -36,16 +50,7 @@ class JupyterlabBlackAPIHandler(APIHandler):
         worker_temp_file = tempfile.NamedTemporaryFile()
         format_temp_file = tempfile.NamedTemporaryFile()
 
-        worker_temp_file.file.write(
-                """
-from black import format_str
-with open('{format_temp}', 'r') as file_:
-    unformatted = file_.read()
-formatted = format_str(unformatted, line_length={line_length})
-with open('{format_temp}', 'w') as file_:
-    file_.write(formatted)
-                """.format(line_length=line_length, format_temp=format_temp_file.name).encode()
-            )
+        worker_temp_file.file.write(self.code_to_format(format_temp_file.name, line_length))
         worker_temp_file.file.flush()
 
         format_temp_file.file.write(unformatted.encode())
