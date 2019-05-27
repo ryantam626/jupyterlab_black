@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name='jupyterlab_black',
-    version='0.2.0',
+    version='0.2.1',
     packages=setuptools.find_packages(),
     description=(
         'The server extension for jupyterlab_black, '
